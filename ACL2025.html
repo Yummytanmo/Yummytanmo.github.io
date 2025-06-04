@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACL 2025 论文趋势交互式分析</title>
+<!-- Chosen Palette: Oceanic & Warm -->
+<!-- Application Structure Plan: The SPA is designed as a single-page narrative scroll, guiding the user from a high-level overview to specific deep dives. It starts with a hook (the 51% stat), moves to an interactive overview chart, then presents a four-pillar grid for the core LLM ecosystem, followed by sections on emerging frontiers and the "meta" aspects of research methodology. This thematic, top-down structure is chosen for better storytelling and information digestion compared to mirroring the report's linear chapter format, making complex data accessible and engaging for a broader audience. -->
+<!-- Visualization & Content Choices: 1. Main Topics: (Goal: Compare/Inform) Doughnut chart (Chart.js) to show part-to-whole distribution of research areas, offering a quick, high-impact overview. 2. LLM Pillars: (Goal: Compare) Bar charts (Chart.js) to compare sub-topics within each pillar, providing clear, granular detail. 3. RAG Process: (Goal: Organize/Explain) HTML/CSS flowchart to visually explain a key process, enhancing comprehension over text. 4. Research Ecosystem: (Goal: Organize/Show Hierarchy) HTML/CSS pyramid diagram to create a strong visual metaphor for foundational concepts. These choices prioritize clarity and engagement, using the best tool for each data type while strictly avoiding SVG/Mermaid. -->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Noto Sans SC', sans-serif;
+background-color: #f8f9fa;
+}
+.chart-container {
+position: relative;
+width: 100%;
+max-width: 600px;
+height: 400px;
+max-height: 450px;
+margin-left: auto;
+margin-right: auto;
+}
+@media (max-width: 768px) {
+.chart-container {
+height: 350px;
+}
+}
+.flowchart-step {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+.flowchart-arrow {
+font-size: 2.5rem;
+line-height: 1;
+color: #0a9396;
+margin: 0 1rem;
+}
+.pyramid-level {
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+color: white;
+font-weight: 500;
+padding: 0.75rem 1.5rem;
+margin: 0.25rem auto;
+clip-path: polygon(10% 0, 90% 0, 100% 100%, 0% 100%);
+}
+.nav-item {
+cursor: pointer;
+transition: all 0.2s ease-in-out;
+}
+.nav-item.active {
+color: #ee9b00;
+border-bottom: 2px solid #ee9b00;
+}
+</style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-center items-center h-16 space-x-4 md:space-x-8">
+            <a href="#overview" class="nav-item text-gray-600 hover:text-[#005f73] font-medium pb-1">概览</a>
+            <a href="#llm-ecosystem" class="nav-item text-gray-600 hover:text-[#005f73] font-medium pb-1">LLM生态</a>
+            <a href="#frontiers" class="nav-item text-gray-600 hover:text-[#005f73] font-medium pb-1">新兴前沿</a>
+            <a href="#foundations" class="nav-item text-gray-600 hover:text-[#005f73] font-medium pb-1">研究基石</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container mx-auto p-4 md:p-8">
+
+    <header class="text-center my-12 md:my-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-[#005f73] mb-3">绘制自然语言处理前沿图谱</h1>
+        <p class="text-xl md:text-2xl text-[#0a9396]">ACL 2025 主要会议论文交互式深度洞察</p>
+    </header>
+
+    <section id="overview" class="mb-16 scroll-mt-20">
+        <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+            <h2 class="text-3xl font-bold text-center text-[#005f73] mb-4">核心洞察：大型语言模型 (LLM) 的绝对主导</h2>
+            <p class="text-lg text-gray-600 text-center max-w-4xl mx-auto mb-8">
+                对ACL 2025主要会议论文的分析揭示了一个明确无误的趋势：大型语言模型（LLM）不仅是一个热门研究分支，而是驱动整个自然语言处理领域发展的核心引擎。其影响力渗透到几乎所有研究子领域，从基础能力提升到复杂的行业应用，定义了当前研究的版图。
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+                <div class="md:col-span-2 text-center flex flex-col justify-center">
+                     <div class="relative inline-block mx-auto">
+                        <div class="text-8xl font-extrabold text-[#ee9b00] animate-pulse">51%</div>
+                    </div>
+                    <p class="text-2xl font-semibold text-gray-700 mt-2">的论文直接聚焦LLM</p>
+                    <p class="text-md text-gray-500 mt-4 leading-relaxed">将LLM核心能力、评测、效率和伦理四大方向相加，相关论文数量占据了会议的半壁江山，清晰地表明了LLM的中心地位。本交互式报告将带您深入探索这一趋势的细节。</p>
+                </div>
+                <div class="md:col-span-3">
+                    <div class="chart-container">
+                        <canvas id="mainTopicsChart"></canvas>
+                    </div>
+                    <p class="text-center text-sm text-gray-500 mt-2">图1：ACL 2025 主要研究主题分布。这张图直观地展示了LLM相关研究（深蓝色系）与其他重要方向（如多模态、领域应用）的论文数量对比。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="llm-ecosystem" class="mb-16 scroll-mt-20">
+        <h2 class="text-3xl font-bold text-center text-[#005f73] mb-2">解构LLM生态系统：四大研究支柱</h2>
+        <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-10">对LLM的研究已形成一个复杂而多元的生态，涵盖从能力增强、基准评测、效率优化到伦理安全等多个层面。这四大支柱相互关联，共同推动着LLM技术的全面进步。</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+
+            <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col hover:shadow-xl transition-shadow duration-300">
+                <h3 class="text-xl font-bold text-[#005f73] mb-4">🚀 核心能力：推动智能边界</h3>
+                <p class="text-gray-600 mb-4 flex-grow">研究者致力于推动LLM的能力边界，重点关注推理、生成、长文本处理和交互式智能体四大关键能力，使其更智能、更实用。这些是模型变得更有用的基础。</p>
+                <div class="chart-container h-64 md:h-72">
+                    <canvas id="coreAbilitiesChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col hover:shadow-xl transition-shadow duration-300">
+                <h3 class="text-xl font-bold text-[#005f73] mb-4">📊 评测与鲁棒性：寻求真实度量</h3>
+                <p class="text-gray-600 mb-4 flex-grow">随着模型日益复杂，如何科学、全面地进行评测成为核心挑战。社群正经历一场“评测军备竞赛”，旨在更深入地理解模型能力，并缓解“幻觉”等问题。</p>
+                 <div class="chart-container h-64 md:h-72">
+                    <canvas id="evaluationChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col hover:shadow-xl transition-shadow duration-300">
+                <h3 class="text-xl font-bold text-[#ca6702] mb-4">⚙️ 效率与架构：实现普惠AI</h3>
+                <p class="text-gray-600 mb-4 flex-grow">“实用性优先”的趋势日益明显，研究重点在于降低LLM的计算和存储开销，使其能够在资源受限的环境中高效运行，从而拓宽技术的应用范围。</p>
+                 <div class="chart-container h-64 md:h-72">
+                    <canvas id="efficiencyChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col hover:shadow-xl transition-shadow duration-300">
+                <h3 class="text-xl font-bold text-[#ae2012] mb-4">🛡️ 伦理AI：构建可信系统</h3>
+                <p class="text-gray-600 mb-4 flex-grow">伦理考量正成为NLP研究的核心。大量研究聚焦于偏见、公平、安全、可解释性和虚假信息等议题，旨在构建负责任、可信赖的AI系统。</p>
+                <div class="chart-container h-64 md:h-72">
+                    <canvas id="ethicsChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="frontiers" class="mb-16 scroll-mt-20">
+        <h2 class="text-3xl font-bold text-center text-[#005f73] mb-2">拓展新前沿：应用与融合</h2>
+        <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-10">在LLM的驱动下，NLP技术正向更复杂的场景和更广泛的领域拓展，多模态、多语言、知识融合和领域应用成为新的增长点。</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-lg shadow-lg p-6 md:col-span-2 hover:shadow-xl transition-shadow duration-300">
+                <h3 class="text-xl font-bold text-[#0a9396] mb-4">🌐 专业领域NLP应用：价值落地</h3>
+                <p class="text-gray-600 mb-4">将NLP技术落地于特定行业是实现其价值的关键。大量研究致力于将通用模型适配于医疗、法律、金融、电商等专业领域，弥合通用AI能力与领域特定需求间的鸿沟。</p>
+                <div class="chart-container h-[450px]">
+                    <canvas id="domainApplicationsChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                <h3 class="text-xl font-bold text-[#0a9396] mb-4">🖼️ 多模态NLP：超越文本</h3>
+                <p class="text-gray-600 mb-4">研究趋势正从简单地并行处理不同模态（文本、视觉、音频），转向实现更深层次的模态融合与跨模态推理，构建对多感官世界具有更整体“理解”的模型。</p>
+                <div class="chart-container h-80">
+                     <canvas id="multimodalChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                <h3 class="text-xl font-bold text-[#0a9396] mb-4">🧠 知识整合 (RAG)：对抗幻觉</h3>
+                <p class="text-gray-600 mb-4">检索增强生成（RAG）已成为主流范式，用于将LLM的输出锚定在外部知识源上。优化检索与生成之间的交互是研究重点。</p>
+                <div class="flex flex-col justify-center items-center h-80 bg-slate-50 rounded-lg p-4">
+                    <div class="flex flex-col md:flex-row items-center justify-around w-full">
+                        <div class="flowchart-step bg-[#94d2bd] text-white p-4 rounded-lg shadow-md w-40 h-28">
+                            <span class="font-bold text-lg">1. 检索</span>
+                            <span class="text-sm block mt-1">从知识库获取相关信息</span>
+                        </div>
+                        <div class="flowchart-arrow transform rotate-90 md:rotate-0">→</div>
+                        <div class="flowchart-step bg-[#ee9b00] text-white p-4 rounded-lg shadow-md w-40 h-28">
+                            <span class="font-bold text-lg">2. 增强</span>
+                             <span class="text-sm block mt-1">将信息整合到提示中</span>
+                        </div>
+                         <div class="flowchart-arrow transform rotate-90 md:rotate-0">→</div>
+                        <div class="flowchart-step bg-[#ca6702] text-white p-4 rounded-lg shadow-md w-40 h-28">
+                           <span class="font-bold text-lg">3. 生成</span>
+                           <span class="text-sm block mt-1">LLM生成更准确的答案</span>
+                        </div>
+                    </div>
+                     <p class="text-center text-sm text-gray-500 mt-6">图2：检索增强生成（RAG）流程示意图。该流程有效提升了LLM输出的事实准确性。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="foundations" class="mb-16 scroll-mt-20">
+         <h2 class="text-3xl font-bold text-center text-[#005f73] mb-2">研究基石与未来展望</h2>
+         <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-10">NLP社群正积极构建和反思研究的基础设施，并探索AI智能体化、个性化等新兴模式，预示着NLP技术的未来演进路径。</p>
+         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                <h3 class="text-xl font-bold text-[#0a9396] mb-4">🏛️ 支撑研究的基石</h3>
+                <p class="text-gray-600 mb-4">社群内部存在着强烈的自我修正和追求严谨的文化。对数据集构建、基准设计和评测方法论的深入探讨，是确保领域健康、可持续发展的关键。</p>
+                <div class="flex flex-col justify-center items-center h-80">
+                    <div class="w-full max-w-sm">
+                        <div class="pyramid-level bg-[#ae2012]" style="width: 100%;">评测方法论与框架</div>
+                        <div class="pyramid-level bg-[#ca6702]" style="width: 85%;">新颖的基准测试 (Benchmark)</div>
+                        <div class="pyramid-level bg-[#ee9b00]" style="width: 70%;">高质量数据集 (Dataset)</div>
+                    </div>
+                    <p class="text-center text-sm text-gray-500 mt-6">图3：NLP研究生态层级。高质量数据是基础，其上构建多样化的基准，顶层则是科学的评测方法。</p>
+                </div>
+            </div>
+             <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                <h3 class="text-xl font-bold text-[#0a9396] mb-4">✨ 新兴模式与未来轨迹</h3>
+                <p class="text-gray-600 mb-4">NLP正从处理文本的工具，演变为能够理解、推理和行动的智能系统。AI智能体、个性化系统和人机协作是未来最重要的发展方向。</p>
+                 <div class="relative h-80 p-4">
+                    <div class="absolute top-0 bottom-0 left-4 w-1 bg-gray-200 rounded"></div>
+                    <div class="relative mb-8 pl-12">
+                        <div class="absolute -left-0 top-1 w-8 h-8 flex items-center justify-center bg-[#0a9396] text-white font-bold rounded-full border-4 border-white shadow">A</div>
+                        <h4 class="font-bold text-[#005f73]">AI智能体化 (Agent)</h4>
+                        <p class="text-sm text-gray-600">发展能使用工具、与环境交互的LLM驱动智能体，完成复杂任务。</p>
+                    </div>
+                     <div class="relative mb-8 pl-12">
+                        <div class="absolute -left-0 top-1 w-8 h-8 flex items-center justify-center bg-[#ee9b00] text-white font-bold rounded-full border-4 border-white shadow">P</div>
+                        <h4 class="font-bold text-[#005f73]">个性化 (Personalization)</h4>
+                        <p class="text-sm text-gray-600">根据个体用户和情境定制模型行为与响应，提供专属体验。</p>
+                    </div>
+                     <div class="relative pl-12">
+                        <div class="absolute -left-0 top-1 w-8 h-8 flex items-center justify-center bg-[#ca6702] text-white font-bold rounded-full border-4 border-white shadow">C</div>
+                        <h4 class="font-bold text-[#005f73]">人机协作 (Collaboration)</h4>
+                        <p class="text-sm text-gray-600">设计使人类与AI能有效协同工作的系统框架，增强人类能力。</p>
+                    </div>
+                </div>
+             </div>
+         </div>
+    </section>
+
+    <footer class="text-center mt-16 py-8 border-t border-gray-300">
+        <p class="text-gray-600">本交互式报告基于对 ACL 2025 主要会议已发表论文列表的公开数据分析。</p>
+        <p class="text-sm text-gray-500 mt-2">在追求技术创新的同时，构建一个严谨、负责、可持续的AI生态系统至关重要。</p>
+    </footer>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const colorPalette = {
+            blue: '#005f73',
+            teal: '#0a9396',
+            mint: '#94d2bd',
+            sand: '#e9d8a6',
+            yellow: '#ee9b00',
+            orange: '#ca6702',
+            burntOrange: '#bb3e03',
+            red: '#ae2012',
+            darkRed: '#9b2226'
+        };
+        
+        const fontFamily = "'Noto Sans SC', sans-serif";
+
+        function wrapLabels(labels, maxLength = 16) {
+            return labels.map(label => {
+                if (typeof label !== 'string' || label.length <= maxLength) return label;
+                const words = label.split(/\s+/);
+                let lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + ' ' + word).trim().length > maxLength && currentLine.length > 0) {
+                        lines.push(currentLine);
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                }
+                if (currentLine.length > 0) lines.push(currentLine);
+                return lines;
+            });
+        }
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) return label.join(' ');
+            return label;
+        };
+
+        const defaultChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: { font: { family: fontFamily, size: 12 }, color: '#374151' }
+                },
+                tooltip: {
+                    titleFont: { family: fontFamily, size: 14, weight: 'bold' },
+                    bodyFont: { family: fontFamily, size: 12 },
+                    callbacks: { title: tooltipTitleCallback }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: { font: { family: fontFamily, size: 11 }, color: '#4b5563' },
+                    grid: { display: false }
+                },
+                y: {
+                    ticks: { font: { family: fontFamily, size: 11 }, color: '#4b5563' },
+                    grid: { color: '#e5e7eb' }
+                }
+            }
+        };
+
+        const mainTopicsData = {
+            labels: wrapLabels([
+                'LLM - 核心能力', 'LLM - 评测与鲁棒性', '专业领域NLP应用', '多模态NLP',
+                'LLM - 伦理AI', 'LLM - 效率与架构', '信息获取与知识融合', '多语言与跨语言NLP',
+                '基础NLP任务', 'NLP研究生态'
+            ]),
+            datasets: [{
+                label: '论文数量',
+                data: [50, 42, 38, 35, 33, 28, 27, 23, 15, 9],
+                backgroundColor: [
+                    colorPalette.blue, colorPalette.teal, colorPalette.orange, colorPalette.yellow, 
+                    colorPalette.red, colorPalette.burntOrange, colorPalette.mint, colorPalette.sand, 
+                    '#6b7280', '#9ca3af'
+                ],
+                borderColor: '#fff',
+                borderWidth: 2,
+                hoverOffset: 10
+            }]
+        };
+        new Chart(document.getElementById('mainTopicsChart'), {
+            type: 'doughnut',
+            data: mainTopicsData,
+            options: {
+                ...defaultChartOptions,
+                scales: { x: { display: false }, y: { display: false } },
+                plugins: {
+                    ...defaultChartOptions.plugins,
+                    legend: { position: 'right', align: 'center', labels: { boxWidth: 15, padding: 15, font: {size: 12} } }
+                }
+            }
+        });
+        
+        new Chart(document.getElementById('coreAbilitiesChart'), {
+            type: 'bar',
+            data: {
+                labels: ['推理', '生成', '长文本', '交互/智能体'],
+                datasets: [{
+                    label: '论文数量',
+                    data: [18, 12, 11, 9],
+                    backgroundColor: [colorPalette.blue, colorPalette.teal, colorPalette.mint, colorPalette.sand],
+                }]
+            },
+            options: { ...defaultChartOptions, indexAxis: 'y', plugins: {...defaultChartOptions.plugins, legend: {display: false}} }
+        });
+        
+        new Chart(document.getElementById('evaluationChart'), {
+            type: 'bar',
+            data: {
+                labels: wrapLabels(['评测基准与指标', '幻觉缓解', '鲁棒性']),
+                datasets: [{
+                    label: '论文数量',
+                    data: [19, 13, 10],
+                    backgroundColor: [colorPalette.blue, colorPalette.teal, colorPalette.mint],
+                }]
+            },
+            options: {...defaultChartOptions, plugins: {...defaultChartOptions.plugins, legend: {display: false}}}
+        });
+
+        new Chart(document.getElementById('efficiencyChart'), {
+            type: 'bar',
+            data: {
+                labels: ['计算效率', '模型架构', '扩展法则'],
+                datasets: [{
+                    label: '论文数量',
+                    data: [15, 8, 5],
+                     backgroundColor: [colorPalette.orange, colorPalette.yellow, colorPalette.sand],
+                }]
+            },
+            options: {...defaultChartOptions, plugins: {...defaultChartOptions.plugins, legend: {display: false}}}
+        });
+
+        new Chart(document.getElementById('ethicsChart'), {
+            type: 'bar',
+            data: {
+                labels: wrapLabels(['偏见与公平', '安全与保障', '虚假信息', '可解释性']),
+                datasets: [{
+                    label: '论文数量',
+                    data: [12, 10, 6, 5],
+                    backgroundColor: [colorPalette.red, colorPalette.burntOrange, colorPalette.orange, colorPalette.yellow],
+                }]
+            },
+             options: { ...defaultChartOptions, indexAxis: 'y', plugins: {...defaultChartOptions.plugins, legend: {display: false}} }
+        });
+        
+        const domainData = {
+            labels: wrapLabels(['医疗健康', '法律领域', '电商与金融', '代码生成', '社科人文', '教育领域']),
+            datasets: [{
+                label: '论文数量',
+                data: [8, 7, 7, 6, 5, 5],
+                backgroundColor: [
+                    colorPalette.blue, colorPalette.teal, colorPalette.mint,
+                    colorPalette.orange, colorPalette.yellow, colorPalette.sand
+                ]
+            }]
+        };
+        new Chart(document.getElementById('domainApplicationsChart'), {
+            type: 'bar',
+            data: domainData,
+            options: {...defaultChartOptions, plugins: {...defaultChartOptions.plugins, legend: {display: false}}}
+        });
+
+        new Chart(document.getElementById('multimodalChart'), {
+            type: 'bubble',
+            data: {
+                datasets: [{
+                    label: '视觉语言模型 (VLM)',
+                    data: [{x: 2, y: 3, r: 25}],
+                    backgroundColor: colorPalette.blue + 'bf'
+                }, {
+                    label: '音频与语音',
+                    data: [{x: 4, y: 5, r: 18}],
+                    backgroundColor: colorPalette.teal + 'bf'
+                }, {
+                    label: '新数据集与基准',
+                    data: [{x: 6, y: 2, r: 22}],
+                    backgroundColor: colorPalette.mint + 'bf'
+                }]
+            },
+            options: {
+                ...defaultChartOptions,
+                plugins: {...defaultChartOptions.plugins, legend: {position: 'bottom'}},
+                scales: {
+                    x: { display: false, min: 0, max: 8 },
+                    y: { display: false, min: 0, max: 8 }
+                }
+            }
+        });
+
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navItems.forEach(item => {
+                        if (item.getAttribute('href').substring(1) === entry.target.id) {
+                            item.classList.add('active');
+                        } else {
+                            item.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-20% 0px -80% 0px' });
+        sections.forEach(section => observer.observe(section));
+
+        navItems.forEach(item => {
+            item.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(item.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+</script>
+</body>
+</html>
