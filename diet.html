@@ -258,25 +258,51 @@
                     </div>
 
                     <div>
-                         <h4 class="text-2xl font-bold text-teal mb-6 text-center">5️⃣ 技术壁垒与突破</h4>
-                         <div class="space-y-6">
+                        <h4 class="text-2xl font-bold text-teal mb-6 text-center">5️⃣ 技术壁垒与突破</h4>
+                        
+                        <div class="card p-6 mb-6">
+                            <h5 class="font-bold text-lg text-gray-800 text-center mb-4">挑战：数据分布极度不均</h5>
+                            <img src="https://github.com/smart-diet-assistent/foodseg/raw/main/analysis_results/train_label_distribution.png" alt="训练集数据标签分布图" class="rounded-lg shadow-md w-full mb-4" onerror="this.alt='图片加载失败'; this.style.display='none'">
+                            <p class="text-gray-600">从图中可见，筛选后的32类食物数据存在严重的类别不平衡问题：背景像素（Class 0）数量远超其他所有类别，且各类食物间的像素量也差异巨大。这会导致模型在训练时“偏心”于多数类，而忽略少数类，影响整体识别精度。</p>
+                        </div>
+                        
+                        <div class="space-y-6">
                             <div class="card p-6">
-                                <h5 class="font-bold text-lg text-gray-800">模型轻量化</h5>
-                                <p class="text-gray-600 mt-2">挑战：在资源仅为KB级的ESP32上运行复杂的PyTorch语义分割模型。<br>突破：通过ONNX和TFLite转换、量化，将模型压缩至极限，并转化为C/C++头文件部署。</p>
+                                <h5 class="font-bold text-lg text-gray-800">突破一：数据不平衡处理</h5>
+                                <p class="text-gray-600 mt-2">为解决上述问题，我们引入Focal Loss损失函数并结合类别权重。这迫使模型在训练时更加关注那些数量稀少且难以识别的食物类别，从而显著提升了模型的泛化能力和精度。</p>
                             </div>
-                             <div class="card p-6">
-                                <h5 class="font-bold text-lg text-gray-800">数据不平衡处理</h5>
-                                <p class="text-gray-600 mt-2">挑战：食物数据集背景像素远超目标像素，导致模型训练偏向背景。<br>突破：引入Focal Loss损失函数和类别权重，有效提升模型对32种食物的识别精度。</p>
+                            <div class="card p-6">
+                                <h5 class="font-bold text-lg text-gray-800">突破二：模型轻量化</h5>
+                                <p class="text-gray-600 mt-2">将复杂的PyTorch模型通过ONNX和TFLite转换、量化，最终压缩并转化为C/C++头文件，使其能在资源仅为KB级的ESP32上高效运行。</p>
                             </div>
-                             <div class="card p-6">
-                                <h5 class="font-bold text-lg text-gray-800">端侧推理效率</h5>
-                                <p class="text-gray-600 mt-2">挑战：在低功耗硬件上实现近乎实时的识别响应。<br>突破：选用高效的LRASPP网络结构，并充分利用ESP32-S3的硬件加速能力。</p>
+                            <div class="card p-6">
+                                <h5 class="font-bold text-lg text-gray-800">突破三：端侧推理效率</h5>
+                                <p class="text-gray-600 mt-2">选用高效的LRASPP网络结构，并充分利用ESP32-S3的硬件加速能力，在低功耗硬件上实现了近乎实时的识别响应。</p>
                             </div>
-                         </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="mt-16">
+                    <div class="mt-16">
+                        <h4 class="text-2xl font-bold text-teal mb-8 text-center">模型进化：从初识到精通</h4>
+                        <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">
+                            通过引入Focal Loss等先进算法，模型在训练过程中不断学习和优化，显著提升了对复杂食物场景的分割与识别能力。
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto mb-16">
+                            <div class="card p-4">
+                                <h5 class="text-xl font-bold text-center text-orange-600 mb-4">训练初期 (Epoch 1)</h5>
+                                <img src="https://github.com/smart-diet-assistent/foodseg/raw/main/results/best_predictions_epoch_1.png" alt="模型训练初期效果图" class="rounded-lg shadow-md w-full" onerror="this.alt='图片加载失败'; this.style.display='none'">
+                                <p class="text-center mt-4 text-gray-600">分割边缘模糊，存在错漏。</p>
+                            </div>
+                            <div class="card p-4">
+                                <h5 class="text-xl font-bold text-center text-teal mb-4">训练后期 (Epoch 36)</h5>
+                                <img src="https://github.com/smart-diet-assistent/foodseg/raw/main/results/best_predictions_epoch_36.png" alt="模型训练后期效果图" class="rounded-lg shadow-md w-full" onerror="this.alt='图片加载失败'; this.style.display='none'">
+                                <p class="text-center mt-4 text-gray-600">边缘清晰，精准识别多种食物。</p>
+                            </div>
+                        </div>
+                    </div>
+
                     <h4 class="text-2xl font-bold text-teal mb-8 text-center">模型性能亮点</h4>
                     
                     <div class="grid md:grid-cols-2 gap-8 mb-12 max-w-3xl mx-auto">
