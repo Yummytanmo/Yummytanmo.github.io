@@ -1,8 +1,8 @@
 main:
   - title: "Internalizing Agent Experience into Diffusion Model Weights via On-Policy Context Distillation"
     authors: '<strong>Wenxuan Wang</strong><sup title="Equal contribution">*</sup>, Zekai Liu<sup title="Equal contribution">*</sup>, Weinan Zhang, Yu Cheng<sup title="Corresponding author">†</sup>, Yang Yang<sup title="Corresponding author">†</sup>'
-    conference: "Under review, 2026."
-    conference_short: Under review
+    conference: "arXiv, 2026."
+    conference_short: arXiv
     arxiv: https://arxiv.org/abs/2610.07250
     pdf: https://arxiv.org/pdf/2610.07250
     code: https://github.com/Yummytanmo/D-OPCD-CoEvolution
