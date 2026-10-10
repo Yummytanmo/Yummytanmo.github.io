@@ -19,10 +19,10 @@ cv:
       degree: 博士在读
       start_date: 2026-08
       end_date: present
-      summary: 与上海人工智能实验室联合培养，所在实验室为 HIT-SCIR。导师：Yu Cheng、Weinan Zhang。
+      summary: 与上海人工智能实验室联合培养，所在实验室为 HIT-SCIR。导师：成宇、张伟男。
     - institution: 哈尔滨工业大学
       area: 人工智能，未来技术学院
-      degree: 学士
+      degree: 工学学士
       start_date: 2022-08
       end_date: 2026-06
     专业能力:
@@ -31,7 +31,7 @@ cv:
     - label: 系统能力
       details: 自主智能体控制, 多智能体社交媒体仿真, 技能演化流程, 智能体基准构建与评测
     论文与研究成果:
-    - title: D-OPCD：通过同策略上下文蒸馏将智能体经验内化至扩散模型权重
+    - title: Internalizing Agent Experience into Diffusion Model Weights via On-Policy Context Distillation
       authors:
       - '**Wenxuan Wang**'
       - Zekai Liu
@@ -45,7 +45,7 @@ cv:
       highlights:
       - 提出 D-OPCD，将智能体优化后的提示词作为特权上下文蒸馏至扩散模型权重，使模型仅凭原始查询即可保留部分智能体增益。
       - 在**四个基准**上，将直接生成的平均得分从 **60.52 提升至 65.09**；更新生成器后，第二轮技能演化相较无技能智能体框架再提升 **1.83 分**。
-    - title: SubtleMemory：长程 AI 智能体的细粒度关系记忆辨别基准
+    - title: 'SubtleMemory: A Benchmark for Fine-Grained Relational Memory Discrimination in Long-Horizon AI Agents'
       authors:
       - '**Wenxuan Wang**'
       - Haoyu Sun
@@ -61,7 +61,7 @@ cv:
       highlights:
       - 提出关系记忆评测基准，检验长程智能体能否区分用户与智能体交互历史中记忆之间的互补、细微差异与矛盾关系。
       - 基于 **10 段长程交互历史**构建 **1,522 个评测实例**，设计分阶段诊断协议，区分记忆保留、检索与下游推理环节的失效。
-    - title: Agent Planning Benchmark：面向 LLM 智能体规划能力的诊断框架
+    - title: 'Agent Planning Benchmark: A Diagnostic Framework for Planning Capabilities in LLM Agents'
       authors:
       - Haoyu Sun
       - '**Wenxuan Wang**'
@@ -98,7 +98,7 @@ cv:
       end_date: 2026-10
       highlights:
       - 围绕智能体记忆、规划与经验蒸馏开展研究，完成 **3 篇共同第一作者论文**：**2 篇被 EMNLP 2026 Findings 接收，1 篇审稿中**。
-    精选荣誉与奖励:
+    主要荣誉与奖励:
     - name: 哈尔滨工业大学优秀毕业生
       date: 2026-05
     - name: 宋庆龄助学金
