@@ -20,6 +20,23 @@ My research interests lie in **AI agents** and **generative models**. My work ex
 
 {% include publications.md %}
 
+## Selected Projects
+
+### Multi-Agent Social Media Simulation Sandbox
+
+*September 2024 – January 2025*
+
+- Contributed to a multi-agent simulation system modeling social media interactions, including following, liking, reposting, commenting, and posting.
+- Improved structured output extraction and simulation performance to support more efficient simulation workflows.
+- Implemented persistent logging and developed custom tools to support system operation and analysis of agent behavior.
+
+### Autonomous Social Media Agent System
+
+*March 2025 – May 2025*
+
+- Developed the central control module for a social media agent system exploring autonomous behavior and influence in online interactions.
+- Supported system operation, testing, and iterative refinement in a real-world social media environment.
+
 ## Education
 
 <ul class="dated-list education-list">

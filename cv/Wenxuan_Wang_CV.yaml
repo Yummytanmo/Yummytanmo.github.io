@@ -1,0 +1,140 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
+# Content transcribed from _config.yml, index.md, and _data/publications.yml.
+cv:
+  name: Wenxuan Wang
+  headline: Joint Ph.D. Student · Harbin Institute of Technology & Shanghai AI Laboratory
+  email: wangwenxuan@pjlab.org.cn
+  website: https://yummytanmo.github.io/
+  social_networks:
+    - network: GitHub
+      username: Yummytanmo
+    - network: Google Scholar
+      username: kHhrf6-6Bx4C
+  sections:
+    Research Interests:
+      - label: AI Agents
+        details: Memory, planning, and learning from experience for long-horizon tasks.
+      - label: Generative Models
+        details: Transferring agent experience into generative models and exploring their co-evolution.
+    Education:
+      - institution: Harbin Institute of Technology
+        area: Faculty of Computing
+        degree: Ph.D.
+        start_date: 2026-08
+        end_date: present
+        highlights:
+          - Joint training with Shanghai AI Laboratory and HIT-SCIR.
+          - 'Advisors: Yu Cheng and Weinan Zhang.'
+      - institution: Harbin Institute of Technology
+        area: Artificial Intelligence, School of Future Technology
+        degree: Bachelor's
+        start_date: 2022-08
+        end_date: 2026-06
+    Publications:
+      - title: Internalizing Agent Experience into Diffusion Model Weights via On-Policy Context Distillation
+        authors:
+          - '**Wenxuan Wang**'
+          - Zekai Liu
+          - Weinan Zhang
+          - Yu Cheng
+          - Yang Yang
+        journal: arXiv preprint, 2026
+        url: https://arxiv.org/abs/2610.07250
+      - title: 'SubtleMemory: A Benchmark for Fine-Grained Relational Memory Discrimination in Long-Horizon AI Agents'
+        authors:
+          - '**Wenxuan Wang**'
+          - Haoyu Sun
+          - Fukuan Hou
+          - Mingyang Song
+          - Weinan Zhang
+          - Yu Cheng
+          - Yang Yang
+        journal: Findings of EMNLP 2026
+        url: https://arxiv.org/abs/2606.05761
+      - title: 'Agent Planning Benchmark: A Diagnostic Framework for Planning Capabilities in LLM Agents'
+        authors:
+          - Haoyu Sun
+          - '**Wenxuan Wang**'
+          - Mingyang Song
+          - Jujie He
+          - Weinan Zhang
+          - Yang Liu
+          - Yang Yang
+          - Yu Cheng
+        journal: Findings of EMNLP 2026
+        url: https://arxiv.org/abs/2606.04874
+    Selected Projects:
+      - name: Multi-Agent Social Media Simulation Sandbox
+        start_date: 2024-09
+        end_date: 2025-01
+        highlights:
+          - Contributed to a multi-agent simulation system modeling social media interactions, including following, liking, reposting, commenting, and posting.
+          - Improved structured output extraction and simulation performance to support more efficient simulation workflows.
+          - Implemented persistent logging and developed custom tools to support system operation and analysis of agent behavior.
+      - name: Autonomous Social Media Agent System
+        start_date: 2025-03
+        end_date: 2025-05
+        highlights:
+          - Developed the central control module for a social media agent system exploring autonomous behavior and influence in online interactions.
+          - Supported system operation, testing, and iterative refinement in a real-world social media environment.
+    Internship Experience:
+      - company: Shanghai AI Laboratory
+        position: Intern
+        start_date: 2025-10
+        end_date: 2026-10
+    Honors & Awards:
+      - name: Outstanding Graduate
+        date: 2026-05
+      - name: Song Qingling Grant
+        date: 2026-03
+      - name: Second Prize, ASC Student Supercomputer Challenge
+        date: 2025-05
+      - name: Samsung Scholarship
+        date: 2025-03
+      - name: Song Qingling Grant
+        date: 2025-03
+      - name: First Prize, National College Student Mathematics Competition (Heilongjiang Division)
+        date: 2023-11
+design:
+  theme: classic
+  page:
+    size: a4
+    top_margin: 1.4cm
+    bottom_margin: 1.4cm
+    left_margin: 1.6cm
+    right_margin: 1.6cm
+    show_top_note: false
+  typography:
+    alignment: left
+    font_family: Source Sans 3
+    font_size:
+      body: 10pt
+      name: 26pt
+      headline: 10pt
+      connections: 9pt
+      section_titles: 13pt
+  header:
+    space_below_name: 0.25cm
+    space_below_headline: 0.25cm
+    space_below_connections: 0.35cm
+  section_titles:
+    space_above: 0.35cm
+    space_below: 0.2cm
+  sections:
+    space_between_regular_entries: 0.7em
+    space_between_text_based_entries: 0.2em
+    show_time_spans_in: []
+  entries:
+    degree_width: 1.8cm
+    date_and_location_width: 3.2cm
+  templates:
+    education_entry:
+      main_column: |-
+        **INSTITUTION**
+        AREA
+        SUMMARY
+        HIGHLIGHTS
+locale:
+  language: english
+settings:
+  current_date: '2026-10-10'
