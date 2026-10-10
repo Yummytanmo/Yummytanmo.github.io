@@ -1,8 +1,10 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
-# Content transcribed from _config.yml, index.md, and _data/publications.yml.
+# Content transcribed from the homepage and author-provided project history.
+# Publication summaries checked against arXiv abstracts on 2026-10-10.
+# Full author lists remain in the source; the PDF emphasizes research and author role.
 cv:
   name: Wenxuan Wang
-  headline: Joint Ph.D. Student · Harbin Institute of Technology & Shanghai AI Laboratory
+  headline: Working on AI Agents
   email: wangwenxuan@pjlab.org.cn
   website: https://yummytanmo.github.io/
   social_networks:
@@ -11,26 +13,21 @@ cv:
     - network: Google Scholar
       username: kHhrf6-6Bx4C
   sections:
-    Research Interests:
-      - label: AI Agents
-        details: Memory, planning, and learning from experience for long-horizon tasks.
-      - label: Generative Models
-        details: Transferring agent experience into generative models and exploring their co-evolution.
+    Summary:
+      - Joint Ph.D. student at Harbin Institute of Technology and Shanghai AI Laboratory, working on AI agents.
     Education:
       - institution: Harbin Institute of Technology
         area: Faculty of Computing
-        degree: Ph.D.
+        degree: Ph.D. Student
         start_date: 2026-08
         end_date: present
-        highlights:
-          - Joint training with Shanghai AI Laboratory and HIT-SCIR.
-          - 'Advisors: Yu Cheng and Weinan Zhang.'
+        summary: 'Joint training with Shanghai AI Laboratory and HIT-SCIR. Advisors: Yu Cheng and Weinan Zhang.'
       - institution: Harbin Institute of Technology
         area: Artificial Intelligence, School of Future Technology
         degree: Bachelor's
         start_date: 2022-08
         end_date: 2026-06
-    Publications:
+    Research & Publications:
       - title: Internalizing Agent Experience into Diffusion Model Weights via On-Policy Context Distillation
         authors:
           - '**Wenxuan Wang**'
@@ -40,6 +37,11 @@ cv:
           - Yang Yang
         journal: arXiv preprint, 2026
         url: https://arxiv.org/abs/2610.07250
+        role: First author
+        links: '[Paper](https://arxiv.org/abs/2610.07250) · [Code](https://github.com/Yummytanmo/D-OPCD-CoEvolution)'
+        highlights:
+          - Introduced D-OPCD to distill agent-refined prompts into diffusion model weights, retaining agent benefits when generating directly from the original query.
+          - Raised the average direct-generation score from **60.52 to 65.09 across four benchmarks**. A second skill-evolution round added **1.83 points** over a skill-free harness on the updated generator.
       - title: 'SubtleMemory: A Benchmark for Fine-Grained Relational Memory Discrimination in Long-Horizon AI Agents'
         authors:
           - '**Wenxuan Wang**'
@@ -51,6 +53,11 @@ cv:
           - Yang Yang
         journal: Findings of EMNLP 2026
         url: https://arxiv.org/abs/2606.05761
+        role: First author
+        links: '[Paper](https://arxiv.org/abs/2606.05761) · [Code](https://github.com/Yummytanmo/SubtleMemory)'
+        highlights:
+          - Introduced a benchmark testing whether long-horizon agents distinguish complementary, nuanced, and contradictory relations among memories embedded in user-agent histories.
+          - Built **1,522 evaluation instances over 10 long histories**, with diagnostic protocols separating failures in memory preservation, retrieval, and downstream reasoning.
       - title: 'Agent Planning Benchmark: A Diagnostic Framework for Planning Capabilities in LLM Agents'
         authors:
           - Haoyu Sun
@@ -63,6 +70,11 @@ cv:
           - Yu Cheng
         journal: Findings of EMNLP 2026
         url: https://arxiv.org/abs/2606.04874
+        role: Second author
+        links: '[Paper](https://arxiv.org/abs/2606.04874) · [Code](https://github.com/Mikivishy/AgentPlanningBenchmark)'
+        highlights:
+          - Co-authored a planning-specific diagnostic benchmark with **4,209 multimodal cases across 22 domains and five settings**, separating planning quality from execution outcomes.
+          - Evaluated **12 multimodal LLMs** on planning and tool-related robustness; validated APB-guided refinement on **200 ToolSandbox and 200 tau-squared-bench tasks**.
     Selected Projects:
       - name: Multi-Agent Social Media Simulation Sandbox
         start_date: 2024-09
@@ -96,44 +108,87 @@ cv:
       - name: First Prize, National College Student Mathematics Competition (Heilongjiang Division)
         date: 2023-11
 design:
-  theme: classic
+  theme: engineeringresumes
   page:
     size: a4
-    top_margin: 1.4cm
-    bottom_margin: 1.4cm
-    left_margin: 1.6cm
-    right_margin: 1.6cm
+    top_margin: 1.3cm
+    bottom_margin: 1.3cm
+    left_margin: 1.5cm
+    right_margin: 1.5cm
     show_top_note: false
   typography:
     alignment: left
-    font_family: Source Sans 3
+    line_spacing: 0.42em
+    font_family: XCharter
     font_size:
       body: 10pt
-      name: 26pt
+      name: 22pt
       headline: 10pt
       connections: 9pt
-      section_titles: 13pt
+      section_titles: 11pt
+    small_caps:
+      name: true
+      section_titles: true
+    bold:
+      name: false
+      section_titles: false
   header:
-    space_below_name: 0.25cm
-    space_below_headline: 0.25cm
-    space_below_connections: 0.35cm
+    space_below_name: 0.18cm
+    space_below_headline: 0.15cm
+    space_below_connections: 0.25cm
+    connections:
+      separator: '·'
+      show_icons: false
+      display_urls_instead_of_usernames: false
+      space_between_connections: 0.2cm
   section_titles:
-    space_above: 0.35cm
-    space_below: 0.2cm
+    space_above: 0.45cm
+    space_below: 0.14cm
   sections:
-    space_between_regular_entries: 0.7em
-    space_between_text_based_entries: 0.2em
+    space_between_regular_entries: 0.6em
+    space_between_text_based_entries: 0.1em
     show_time_spans_in: []
   entries:
-    degree_width: 1.8cm
-    date_and_location_width: 3.2cm
+    date_and_location_width: 4.2cm
+    short_second_row: false
+    side_space: 0cm
+    highlights:
+      bullet: '•'
+      space_left: 0.12cm
+      space_above: 0.04cm
+      space_between_items: 0.04cm
+      space_between_bullet_and_text: 0.45em
+    summary:
+      space_above: 0cm
+  links:
+    underline: false
+  colors:
+    links: rgb(0, 51, 102)
+    connections: rgb(0, 51, 102)
   templates:
     education_entry:
       main_column: |-
         **INSTITUTION**
-        AREA
+        DEGREE, AREA
         SUMMARY
         HIGHLIGHTS
+      degree_column: null
+      date_and_location_column: DATE
+    publication_entry:
+      main_column: |-
+        **TITLE**
+        *ROLE · JOURNAL* · LINKS
+        HIGHLIGHTS
+      date_and_location_column: ''
+    normal_entry:
+      main_column: |-
+        **NAME**
+        SUMMARY
+        HIGHLIGHTS
+      date_and_location_column: DATE
+    experience_entry:
+      main_column: '**COMPANY** · POSITION'
+      date_and_location_column: DATE
 locale:
   language: english
 settings:
