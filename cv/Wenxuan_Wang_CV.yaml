@@ -30,7 +30,7 @@ cv:
         end_date: 2026-06
     Expertise:
       - label: Research
-        details: Skill Learning, Agent Memory, Self-Evolving Agents, Text-to-Image Agents, Agent–Model Co-evolution
+        details: Skill Learning, Agent Memory, Self-Evolving Agents, Generative Models, Text-to-Image Agents, Agent–Model Co-evolution
       - label: Systems
         details: Skill Evolution Pipelines, Agent Benchmarking and Evaluation, Multi-Agent Social Media Simulation, Autonomous Agent Control
     Research & Publications:
