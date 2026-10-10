@@ -38,7 +38,7 @@ cv:
           - Yang Yang
         journal: arXiv preprint, 2026
         url: https://arxiv.org/abs/2610.07250
-        role: Co-first author
+        role: Co-first author (listed first)
         links: '[Paper](https://arxiv.org/abs/2610.07250) · [Code](https://github.com/Yummytanmo/D-OPCD-CoEvolution)'
         highlights:
           - Introduced D-OPCD to distill agent-refined prompts into diffusion model weights, retaining agent benefits when generating directly from the original query.
@@ -54,7 +54,7 @@ cv:
           - Yang Yang
         journal: Findings of EMNLP 2026
         url: https://arxiv.org/abs/2606.05761
-        role: Co-first author
+        role: Co-first author (listed first)
         links: '[Paper](https://arxiv.org/abs/2606.05761) · [Code](https://github.com/Yummytanmo/SubtleMemory)'
         highlights:
           - Introduced a benchmark testing whether long-horizon agents distinguish complementary, nuanced, and contradictory relations among memories embedded in user-agent histories.
@@ -71,7 +71,7 @@ cv:
           - Yu Cheng
         journal: Findings of EMNLP 2026
         url: https://arxiv.org/abs/2606.04874
-        role: Co-first author
+        role: Co-first author (listed second)
         links: '[Paper](https://arxiv.org/abs/2606.04874) · [Code](https://github.com/Mikivishy/AgentPlanningBenchmark)'
         highlights:
           - Co-authored a planning-specific diagnostic benchmark with **4,209 multimodal cases across 22 domains and five settings**, separating planning quality from execution outcomes.
