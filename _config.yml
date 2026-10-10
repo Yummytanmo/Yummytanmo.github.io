@@ -1,0 +1,35 @@
+title: Wenxuan Wang
+position: Ph.D. Student
+lang: en
+affiliation: Harbin Institute of Technology
+affiliation_link: https://www.hit.edu.cn/
+lab: HIT SCIR
+lab_link: https://ir.hit.edu.cn/
+joint_affiliation: Shanghai AI Laboratory
+joint_affiliation_link: https://www.shlab.org.cn/
+email: wxwang@ir.hit.edu.cn
+description: "Wenxuan Wang, a Joint PhD Student at Shanghai AI Lab and HIT-SCIR, advised by Yu Cheng and Weinan Zhang. Research interests: AI agents and generative models."
+keywords: Wenxuan Wang, HIT SCIR, AI Agents, Generative Models
+url: https://yummytanmo.github.io
+baseurl: ""
+google_scholar: https://scholar.google.com/citations?user=kHhrf6-6Bx4C&hl=en
+github_link: https://github.com/Yummytanmo
+orcid: https://orcid.org/0009-0000-4517-0255
+cv_link: ""
+linkedin: https://www.linkedin.com/in/wenxuan-wang-188468392/
+twitter: https://x.com/Yummytanmo
+avatar: /assets/img/avatar.jpg
+favicon: /assets/img/favicon.png
+favicon_dark: /assets/img/favicon-dark.png
+enable_footnote: true
+auto_dark_mode: true
+font: Serif
+markdown: kramdown
+permalink: pretty
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - vendor
+  - .bundle

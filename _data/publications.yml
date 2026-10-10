@@ -1,0 +1,32 @@
+main:
+  - title: "Internalizing Agent Experience into Diffusion Model Weights via On-Policy Context Distillation"
+    authors: "<strong>Wenxuan Wang</strong>, Zekai Liu, Weinan Zhang, Yu Cheng, Yang Yang"
+    conference: "arXiv preprint, 2026."
+    conference_short: arXiv
+    arxiv: https://arxiv.org/abs/2610.07250
+    pdf: https://arxiv.org/pdf/2610.07250
+    code: https://github.com/Yummytanmo/D-OPCD-CoEvolution
+    page: https://yummytanmo.github.io/D-OPCD-CoEvolution/
+    bibtex: /assets/files/d-opcd.bib
+    image: /assets/img/d-opcd.png
+
+  - title: "SubtleMemory: A Benchmark for Fine-Grained Relational Memory Discrimination in Long-Horizon AI Agents"
+    authors: "<strong>Wenxuan Wang</strong>, Haoyu Sun, Fukuan Hou, Mingyang Song, Weinan Zhang, Yu Cheng, Yang Yang"
+    conference: "EMNLP 2026 Findings"
+    conference_short: EMNLP Findings
+    arxiv: https://arxiv.org/abs/2606.05761
+    pdf: https://arxiv.org/pdf/2606.05761
+    code: https://github.com/Yummytanmo/SubtleMemory
+    page: https://yummytanmo.github.io/SubtleMemory/
+    bibtex: /assets/files/subtlememory.bib
+    image: /assets/img/subtlememory.png
+
+  - title: "Agent Planning Benchmark: A Diagnostic Framework for Planning Capabilities in LLM Agents"
+    authors: "Haoyu Sun, <strong>Wenxuan Wang</strong>, Mingyang Song, Jujie He, Weinan Zhang, Yang Liu, Yang Yang, Yu Cheng"
+    conference: "EMNLP 2026 Findings"
+    conference_short: EMNLP Findings
+    arxiv: https://arxiv.org/abs/2606.04874
+    pdf: https://arxiv.org/pdf/2606.04874
+    code: https://github.com/Mikivishy/AgentPlanningBenchmark
+    bibtex: /assets/files/agent-planning-benchmark.bib
+    image: /assets/img/agent-planning-benchmark.png
