@@ -15,7 +15,7 @@ baseurl: ""
 google_scholar: https://scholar.google.com/citations?user=kHhrf6-6Bx4C&hl=en
 github_link: https://github.com/Yummytanmo
 orcid: https://orcid.org/0009-0000-4517-0255
-cv_link: ""
+cv_link: /assets/files/Wenxuan_Wang_CV.pdf
 linkedin: https://www.linkedin.com/in/wenxuan-wang-188468392/
 twitter: https://x.com/Yummytanmo
 avatar: /assets/img/avatar.jpg
@@ -33,3 +33,4 @@ exclude:
   - LICENSE
   - vendor
   - .bundle
+  - cv
