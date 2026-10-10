@@ -1,6 +1,7 @@
 {% if site.data.publications.main.size > 0 %}
 <h2 id="publications">Publications</h2>
 <div class="publications">
+  <p class="author-legend"><sup>*</sup> Equal contribution. <sup>†</sup> Corresponding author.</p>
   <ol class="bibliography">
     {% for paper in site.data.publications.main %}
     <li>

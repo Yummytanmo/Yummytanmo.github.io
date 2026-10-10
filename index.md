@@ -56,7 +56,7 @@ An autonomous social media agent system for exploring agent autonomy and influen
 <ul class="dated-list">
   <li>
     <span class="entry-date">Oct. 2025 – Oct. 2026</span>
-    <div><strong>Shanghai AI Laboratory</strong><br>Intern</div>
+    <div><strong>Shanghai AI Laboratory</strong><br>Intern<br>Researched AI agent memory, planning, and experience distillation, resulting in three co-first-authored papers: two accepted to Findings of EMNLP 2026 and one arXiv preprint.</div>
   </li>
 </ul>
 

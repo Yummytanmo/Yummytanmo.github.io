@@ -15,6 +15,7 @@ section { width: calc(100% - 310px); }
 .social-icons .profile-placeholder { display: inline-block; height: 2.4rem; color: #043361; text-align: center; font-size: 1.15rem; line-height: 2.5rem; }
 @media (prefers-color-scheme: dark) { .social-icons .profile-placeholder { color: #3eb7f0; } }
 .publications { margin-top: 1.1rem; }
+.publications .author-legend { font-size: 0.85rem; margin-bottom: 1rem; }
 .publications ol.bibliography li { margin-bottom: 1.65rem; }
 .paper-details { min-width: 0; padding: 0 0 0 20px; }
 .without-image .paper-details { padding: 0; }

@@ -1,6 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
 # Content transcribed from the homepage and author-provided project history.
 # Publication summaries checked against arXiv abstracts on 2026-10-10.
+# Co-first author roles checked against the three paper PDFs on 2026-10-10.
 # Full author lists remain in the source; the PDF emphasizes research and author role.
 cv:
   name: Wenxuan Wang
@@ -37,7 +38,7 @@ cv:
           - Yang Yang
         journal: arXiv preprint, 2026
         url: https://arxiv.org/abs/2610.07250
-        role: First author
+        role: Co-first author
         links: '[Paper](https://arxiv.org/abs/2610.07250) · [Code](https://github.com/Yummytanmo/D-OPCD-CoEvolution)'
         highlights:
           - Introduced D-OPCD to distill agent-refined prompts into diffusion model weights, retaining agent benefits when generating directly from the original query.
@@ -53,7 +54,7 @@ cv:
           - Yang Yang
         journal: Findings of EMNLP 2026
         url: https://arxiv.org/abs/2606.05761
-        role: First author
+        role: Co-first author
         links: '[Paper](https://arxiv.org/abs/2606.05761) · [Code](https://github.com/Yummytanmo/SubtleMemory)'
         highlights:
           - Introduced a benchmark testing whether long-horizon agents distinguish complementary, nuanced, and contradictory relations among memories embedded in user-agent histories.
@@ -70,7 +71,7 @@ cv:
           - Yu Cheng
         journal: Findings of EMNLP 2026
         url: https://arxiv.org/abs/2606.04874
-        role: Second author
+        role: Co-first author
         links: '[Paper](https://arxiv.org/abs/2606.04874) · [Code](https://github.com/Mikivishy/AgentPlanningBenchmark)'
         highlights:
           - Co-authored a planning-specific diagnostic benchmark with **4,209 multimodal cases across 22 domains and five settings**, separating planning quality from execution outcomes.
@@ -93,6 +94,8 @@ cv:
         position: Intern
         start_date: 2025-10
         end_date: 2026-10
+        highlights:
+          - 'Researched AI agent memory, planning, and experience distillation, resulting in **three co-first-authored papers**: two accepted to Findings of EMNLP 2026 and one arXiv preprint.'
     Honors & Awards:
       - name: Outstanding Graduate
         date: 2026-05
@@ -186,7 +189,10 @@ design:
         HIGHLIGHTS
       date_and_location_column: DATE
     experience_entry:
-      main_column: '**COMPANY** · POSITION'
+      main_column: |-
+        **COMPANY** · POSITION
+        SUMMARY
+        HIGHLIGHTS
       date_and_location_column: DATE
 locale:
   language: english
