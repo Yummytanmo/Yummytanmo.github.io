@@ -28,6 +28,11 @@ cv:
         degree: Bachelor's
         start_date: 2022-08
         end_date: 2026-06
+    Expertise:
+      - label: Research
+        details: Agent Memory and Planning, Agent Experience Distillation, Text-to-Image Agents, Agent–Model Co-evolution
+      - label: Systems
+        details: Agent Benchmark Construction and Evaluation, Multi-Agent Social Media Simulation, Autonomous Agent Control
     Research & Publications:
       - title: Internalizing Agent Experience into Diffusion Model Weights via On-Policy Context Distillation
         authors:
@@ -168,6 +173,10 @@ design:
     links: rgb(0, 51, 102)
     connections: rgb(0, 51, 102)
   templates:
+    one_line_entry:
+      main_column: |-
+        **LABEL**
+        DETAILS
     education_entry:
       main_column: |-
         **INSTITUTION**
