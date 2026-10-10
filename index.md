@@ -60,7 +60,7 @@ An autonomous social media agent system for exploring agent autonomy and influen
   </li>
 </ul>
 
-## Honors & Awards
+## Selected Honors & Awards
 
 <ul class="dated-list awards-list">
   <li><span class="entry-date">May 2026</span><div>Outstanding Graduate, Harbin Institute of Technology</div></li>
