@@ -36,7 +36,7 @@ cv:
           - Weinan Zhang
           - Yu Cheng
           - Yang Yang
-        journal: arXiv preprint, 2026
+        journal: Under review, 2026
         url: https://arxiv.org/abs/2610.07250
         role: Co-first author (listed first)
         links: '[Paper](https://arxiv.org/abs/2610.07250) · [Code](https://github.com/Yummytanmo/D-OPCD-CoEvolution)'
@@ -95,7 +95,7 @@ cv:
         start_date: 2025-10
         end_date: 2026-10
         highlights:
-          - 'Researched AI agent memory, planning, and experience distillation, resulting in **three co-first-authored papers**: two accepted to Findings of EMNLP 2026 and one arXiv preprint.'
+          - 'Researched AI agent memory, planning, and experience distillation, resulting in **three co-first-authored papers**: two accepted to Findings of EMNLP 2026 and one manuscript under review.'
     Honors & Awards:
       - name: Outstanding Graduate
         date: 2026-05

@@ -34,4 +34,5 @@ Research summaries and reported results were checked on October 10, 2026 against
   12 evaluated models, and 200 tasks each from ToolSandbox and tau-squared-bench.
 
 EMNLP 2026 Findings acceptance for APB was confirmed by the author; SubtleMemory
-also records it in the arXiv comments. D-OPCD remains labeled as a preprint.
+also records it in the arXiv comments. D-OPCD is labeled as under review, as
+confirmed by the author.
