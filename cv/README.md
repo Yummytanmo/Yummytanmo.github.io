@@ -1,4 +1,4 @@
-# English academic CV
+# Academic CVs
 
 The website publishes `assets/files/Wenxuan_Wang_CV.pdf`. Its editable source is
 `Wenxuan_Wang_CV.yaml`, rendered with RenderCV 2.8 and Python 3.12 or newer:
@@ -9,6 +9,17 @@ uv pip install --python .venv-rendercv/bin/python -r cv/requirements.txt
 .venv-rendercv/bin/rendercv render cv/Wenxuan_Wang_CV.yaml
 cp cv/rendercv_output/Wenxuan_Wang_CV.pdf assets/files/Wenxuan_Wang_CV.pdf
 ```
+
+The Chinese version uses `Wenxuan_Wang_Resume_ZH.yaml`, the same custom templates,
+and the bundled Noto Sans SC font. Render and publish it with:
+
+```sh
+.venv-rendercv/bin/rendercv render cv/Wenxuan_Wang_Resume_ZH.yaml
+cp cv/rendercv_output/Wenxuan_Wang_Resume_ZH.pdf assets/files/Wenxuan_Wang_Resume_ZH.pdf
+```
+
+Keep both language versions in sync when changing research, author roles,
+publication status, projects, or awards. The homepage CV icon opens the English PDF.
 
 Run these commands from the repository root. RenderCV downloads the official
 Typst `fontawesome` package on its first render. Generated files stay in

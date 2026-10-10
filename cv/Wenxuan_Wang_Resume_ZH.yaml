@@ -1,0 +1,213 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
+# 中文版，与英文学术简历及用户确认的作者顺序、审稿状态和项目经历同步。
+cv:
+  name: 汪文轩
+  headline: 人工智能博士生 · AI 智能体 · 图像生成智能体
+  email: wangwenxuan@pjlab.org.cn
+  website: https://yummytanmo.github.io/
+  social_networks:
+  - network: GitHub
+    username: Yummytanmo
+  - network: Google Scholar
+    username: kHhrf6-6Bx4C
+  sections:
+    个人简介:
+    - 哈尔滨工业大学与上海人工智能实验室联合培养博士研究生，研究方向为 AI 智能体与生成模型。
+    教育经历:
+    - institution: 哈尔滨工业大学
+      area: 计算学部
+      degree: 博士在读
+      start_date: 2026-08
+      end_date: present
+      summary: 与上海人工智能实验室联合培养，所在实验室为 HIT-SCIR。导师：Yu Cheng、Weinan Zhang。
+    - institution: 哈尔滨工业大学
+      area: 人工智能，未来技术学院
+      degree: 学士
+      start_date: 2022-08
+      end_date: 2026-06
+    专业能力:
+    - label: 研究方向
+      details: 生成模型, 文生图智能体, 智能体记忆, 技能学习, 自进化智能体, 智能体与模型协同演化
+    - label: 系统能力
+      details: 自主智能体控制, 多智能体社交媒体仿真, 技能演化流程, 智能体基准构建与评测
+    论文与研究成果:
+    - title: D-OPCD：通过同策略上下文蒸馏将智能体经验内化至扩散模型权重
+      authors:
+      - '**Wenxuan Wang**'
+      - Zekai Liu
+      - Weinan Zhang
+      - Yu Cheng
+      - Yang Yang
+      journal: 审稿中，2026
+      url: https://arxiv.org/abs/2610.07250
+      role: 共同第一作者（署名第一）
+      links: '[论文](https://arxiv.org/abs/2610.07250) · [代码](https://github.com/Yummytanmo/D-OPCD-CoEvolution)'
+      highlights:
+      - 提出 D-OPCD，将智能体优化后的提示词作为特权上下文蒸馏至扩散模型权重，使模型仅凭原始查询即可保留部分智能体增益。
+      - 在**四个基准**上，将直接生成的平均得分从 **60.52 提升至 65.09**；更新生成器后，第二轮技能演化相较无技能智能体框架再提升 **1.83 分**。
+    - title: SubtleMemory：长程 AI 智能体的细粒度关系记忆辨别基准
+      authors:
+      - '**Wenxuan Wang**'
+      - Haoyu Sun
+      - Fukuan Hou
+      - Mingyang Song
+      - Weinan Zhang
+      - Yu Cheng
+      - Yang Yang
+      journal: EMNLP 2026 Findings，已接收
+      url: https://arxiv.org/abs/2606.05761
+      role: 共同第一作者（署名第一）
+      links: '[论文](https://arxiv.org/abs/2606.05761) · [代码](https://github.com/Yummytanmo/SubtleMemory)'
+      highlights:
+      - 提出关系记忆评测基准，检验长程智能体能否区分用户与智能体交互历史中记忆之间的互补、细微差异与矛盾关系。
+      - 基于 **10 段长程交互历史**构建 **1,522 个评测实例**，设计分阶段诊断协议，区分记忆保留、检索与下游推理环节的失效。
+    - title: Agent Planning Benchmark：面向 LLM 智能体规划能力的诊断框架
+      authors:
+      - Haoyu Sun
+      - '**Wenxuan Wang**'
+      - Mingyang Song
+      - Jujie He
+      - Weinan Zhang
+      - Yang Liu
+      - Yang Yang
+      - Yu Cheng
+      journal: EMNLP 2026 Findings，已接收
+      url: https://arxiv.org/abs/2606.04874
+      role: 共同第一作者（署名第二）
+      links: '[论文](https://arxiv.org/abs/2606.04874) · [代码](https://github.com/Mikivishy/AgentPlanningBenchmark)'
+      highlights:
+      - 共同构建面向规划能力的诊断基准，包含 **22 个领域、5 类设置下的 4,209 个多模态样例**，将规划质量与执行结果分开评估。
+      - 评估 **12 个多模态大模型**的规划能力与工具鲁棒性，并在 **ToolSandbox 与 tau-squared-bench 各 200 个任务**上验证基准引导的规划改进。
+    项目经历:
+    - name: 多智能体社交媒体仿真沙盒
+      start_date: 2024-09
+      end_date: 2025-01
+      summary: 面向社交媒体交互仿真与智能体行为研究的多智能体沙盒系统。
+      highlights:
+      - 参与系统迭代与性能优化，提升多智能体仿真的运行效率。
+    - name: 社交媒体智能体系统
+      start_date: 2025-03
+      end_date: 2025-05
+      summary: 探索在线交互中智能体自主性与影响力的社交媒体智能体系统。
+      highlights:
+      - 开发中枢控制模块，参与真实环境测试与系统迭代。
+    实习经历:
+    - company: 上海人工智能实验室
+      position: 科研实习生
+      start_date: 2025-10
+      end_date: 2026-10
+      highlights:
+      - 围绕智能体记忆、规划与经验蒸馏开展研究，完成 **3 篇共同第一作者论文**：**2 篇被 EMNLP 2026 Findings 接收，1 篇审稿中**。
+    精选荣誉与奖励:
+    - name: 哈尔滨工业大学优秀毕业生
+      date: 2026-05
+    - name: 宋庆龄助学金
+      date: 2026-03
+    - name: ASC 世界大学生超级计算机竞赛二等奖
+      date: 2025-05
+    - name: 三星奖学金
+      date: 2025-03
+    - name: 宋庆龄助学金
+      date: 2025-03
+    - name: 全国大学生数学竞赛（黑龙江赛区）一等奖
+      date: 2023-11
+design:
+  theme: engineeringresumes
+  page:
+    size: a4
+    top_margin: 1.3cm
+    bottom_margin: 1.3cm
+    left_margin: 1.5cm
+    right_margin: 1.5cm
+    show_top_note: false
+  typography:
+    alignment: left
+    line_spacing: 0.42em
+    font_family: Noto Sans SC
+    font_size:
+      body: 10pt
+      name: 22pt
+      headline: 10pt
+      connections: 9pt
+      section_titles: 11pt
+    small_caps:
+      name: false
+      section_titles: false
+    bold:
+      name: true
+      section_titles: true
+  header:
+    space_below_name: 0.18cm
+    space_below_headline: 0.15cm
+    space_below_connections: 0.25cm
+    connections:
+      separator: ·
+      show_icons: false
+      display_urls_instead_of_usernames: false
+      space_between_connections: 0.2cm
+  section_titles:
+    space_above: 0.45cm
+    space_below: 0.14cm
+  sections:
+    space_between_regular_entries: 0.6em
+    space_between_text_based_entries: 0.1em
+    show_time_spans_in: []
+  entries:
+    date_and_location_width: 4.2cm
+    short_second_row: false
+    side_space: 0cm
+    highlights:
+      bullet: •
+      space_left: 0.12cm
+      space_above: 0.04cm
+      space_between_items: 0.04cm
+      space_between_bullet_and_text: 0.45em
+    summary:
+      space_above: 0cm
+  links:
+    underline: false
+  colors:
+    links: rgb(0, 51, 102)
+    connections: rgb(0, 51, 102)
+  templates:
+    one_line_entry:
+      main_column: |-
+        **LABEL**
+        DETAILS
+    education_entry:
+      main_column: |-
+        **INSTITUTION**
+        DEGREE, AREA
+        SUMMARY
+        HIGHLIGHTS
+      degree_column:
+      date_and_location_column: DATE
+    publication_entry:
+      main_column: |-
+        **TITLE**
+        *ROLE · JOURNAL* · LINKS
+        HIGHLIGHTS
+      date_and_location_column: ''
+    normal_entry:
+      main_column: |-
+        **NAME**
+        SUMMARY
+        HIGHLIGHTS
+      date_and_location_column: DATE
+    experience_entry:
+      main_column: |-
+        **COMPANY** · POSITION
+        SUMMARY
+        HIGHLIGHTS
+      date_and_location_column: DATE
+    single_date: YEAR.MONTH
+locale:
+  language: mandarin_chinese
+settings:
+  current_date: '2026-10-10'
+  render_command:
+    pdf_path: OUTPUT_FOLDER/Wenxuan_Wang_Resume_ZH.pdf
+    typst_path: OUTPUT_FOLDER/Wenxuan_Wang_Resume_ZH.typ
+    markdown_path: OUTPUT_FOLDER/Wenxuan_Wang_Resume_ZH.md
+    html_path: OUTPUT_FOLDER/Wenxuan_Wang_Resume_ZH.html
+    png_path: OUTPUT_FOLDER/Wenxuan_Wang_Resume_ZH.png
