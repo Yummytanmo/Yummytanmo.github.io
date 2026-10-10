@@ -49,7 +49,7 @@
           {% if site.github_link %}<a href="{{ site.github_link | escape }}" aria-label="GitHub" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>{% endif %}
           {% if site.orcid %}<a href="{{ site.orcid | escape }}" aria-label="ORCID" title="ORCID"><i class="fab fa-orcid" aria-hidden="true"></i></a>{% endif %}
           {% if site.cv_link and site.cv_link != '' %}
-          <a href="{{ site.cv_link | relative_url }}" aria-label="Curriculum vitae" title="Curriculum vitae"><i class="ai ai-cv" aria-hidden="true"></i></a>
+          <a href="{{ site.cv_link | relative_url }}" target="_blank" rel="noopener noreferrer" aria-label="Curriculum vitae (opens in a new tab)" title="Curriculum vitae"><i class="ai ai-cv" aria-hidden="true"></i></a>
           {% else %}
           <span class="profile-placeholder" role="link" aria-disabled="true" aria-label="Curriculum vitae (link coming soon)" title="Curriculum vitae — coming soon"><i class="ai ai-cv" aria-hidden="true"></i></span>
           {% endif %}
