@@ -1,9 +1,15 @@
 /* Small additions to the original Minimal Light layout. */
-.image.avatar img { height: auto; }
+html { font-size: 18px; }
+body { font-size: 1rem; line-height: 1.6; }
+h1 { font-size: 2rem; }
+.wrapper { width: 1080px; max-width: calc(100% - 48px); }
+header { width: 250px; }
+section { width: calc(100% - 310px); }
+.image.avatar img { width: 136px; height: auto; }
 .affiliations { margin-bottom: 0.65rem; line-height: 1.65; }
 .affiliations a { color: inherit; }
 .position { margin-bottom: 0.5rem; }
-.email { font: 14px/1.5 'Ubuntu Mono', monospace; overflow-wrap: anywhere; }
+.email { font: 0.9rem/1.5 'Ubuntu Mono', monospace; overflow-wrap: anywhere; }
 .social-icons { display: flex; justify-content: center; gap: 0.25rem; margin-top: 1rem; }
 .social-icons > a, .social-icons > .profile-placeholder { flex: 0 0 2rem; width: 2rem; margin: 0; }
 .social-icons .profile-placeholder { display: inline-block; height: 2.4rem; color: #043361; text-align: center; font-size: 1.15rem; line-height: 2.5rem; }
@@ -15,21 +21,26 @@
 .publications .title { line-height: 1.4; margin-bottom: 0.3rem; }
 .publications .author, .publications .periodical { line-height: 1.45; margin-bottom: 0.25rem; }
 .publications .links { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
-.publications .links .btn { font-size: 12px; border-radius: 3px; text-decoration: none; }
-.publications ol.bibliography li .abbr { position: relative; flex: 0 0 150px; height: 110px; margin: 0; }
+.publications .links .btn { font-size: 0.85rem; border-radius: 3px; text-decoration: none; }
+.publications ol.bibliography li .abbr { position: relative; flex: 0 0 190px; height: 140px; margin: 0; }
 .publications ol.bibliography li .abbr .badge { position: absolute; top: 8px; left: -4px; z-index: 1; min-width: 48px; padding: 0.25em 0.65em; background: var(--global-theme-color); }
-.publications ol.bibliography li .teaser { display: block; width: 150px; height: 110px; object-fit: cover; background: white; margin: 0; }
+.publications ol.bibliography li .teaser { display: block; width: 190px; height: 140px; object-fit: cover; background: white; margin: 0; }
 .theme-credit { margin-top: 2.5rem; }
 .dated-list { list-style: none; margin: 0 0 1.5rem; padding: 0; }
-.dated-list li { display: grid; grid-template-columns: 145px minmax(0, 1fr); gap: 1rem; margin-bottom: 1rem; }
+.dated-list li { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; margin-bottom: 1rem; }
 .entry-date { font-size: 0.9rem; padding-top: 0.1rem; }
 .awards-list li { margin-bottom: 0.6rem; }
 a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 .skip-link { position: absolute; top: -100px; left: 1rem; padding: 0.5rem 1rem; background: white; z-index: 10; }
 .skip-link:focus { top: 1rem; }
+@media screen and (max-width: 960px) {
+  .wrapper { max-width: none; }
+  header, section { width: auto; }
+}
 @media screen and (max-width: 480px) {
+  .image.avatar img { width: 120px; }
   .dated-list li { grid-template-columns: 1fr; gap: 0.15rem; }
   .paper-details { padding: 0; }
-  .publications ol.bibliography li .abbr { width: 160px; height: 110px; max-width: 100%; margin-bottom: 1rem; }
+  .publications ol.bibliography li .abbr { width: 200px; height: 145px; max-width: 100%; margin-bottom: 1rem; }
   .publications ol.bibliography li .teaser { width: 100%; height: 100%; }
 }
