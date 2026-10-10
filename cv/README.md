@@ -15,7 +15,8 @@ Typst `fontawesome` package on its first render. Generated files stay in
 `cv/rendercv_output/`; Jekyll excludes the entire `cv/` source directory.
 
 The `engineeringresumes/` templates customize the contact labels, give research
-entries the full page width, align expertise labels with their descriptions,
+entries the full page width, align expertise labels with narrower descriptions
+that keep individual phrases together,
 and keep project and award dates aligned without
 reserving unnecessary space. Keep this directory beside the YAML when rendering.
 
