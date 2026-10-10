@@ -10,13 +10,19 @@ uv pip install --python .venv-rendercv/bin/python -r cv/requirements.txt
 cp cv/rendercv_output/Wenxuan_Wang_CV.pdf assets/files/Wenxuan_Wang_CV.pdf
 ```
 
-The Chinese version uses `Wenxuan_Wang_Resume_ZH.yaml`, the same custom templates,
-and the bundled Noto Sans SC font. Render and publish it with:
+The Chinese version uses `Wenxuan_Wang_Resume_ZH.yaml` and the same custom templates.
+It pairs Noto Serif SC body text with Noto Sans SC names and section titles;
+bold Latin text uses XCharter. Download the official serif fonts before rendering:
 
 ```sh
+sh cv/fetch-fonts.sh
 .venv-rendercv/bin/rendercv render cv/Wenxuan_Wang_Resume_ZH.yaml
 cp cv/rendercv_output/Wenxuan_Wang_Resume_ZH.pdf assets/files/Wenxuan_Wang_Resume_ZH.pdf
 ```
+
+Fonts are downloaded from the [official Noto CJK repository](https://github.com/notofonts/noto-cjk/tree/main/Serif/SubsetOTF/SC)
+under the [SIL Open Font License](https://github.com/notofonts/noto-cjk/blob/main/Serif/LICENSE).
+They stay in the ignored `cv/fonts/` directory and are embedded in the generated PDF.
 
 Keep both language versions in sync when changing research, author roles,
 publication status, projects, or awards. The homepage CV icon opens the English PDF.

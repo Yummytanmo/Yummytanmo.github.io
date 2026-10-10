@@ -1,3 +1,8 @@
+{% if locale.language == "mandarin_chinese" %}
+{# Serif body, sans-serif Chinese emphasis, and serif Latin paper titles. #}
+#show strong: set text(font: ("XCharter", "Noto Sans SC"))
+
+{% endif %}
 = {{ cv.name }}
 
 #headline([{{ cv.headline }}])

@@ -1,5 +1,5 @@
 {# Keep each expertise phrase together within a narrower description column. #}
-#block(width: 15.5cm)[
+#block(width: 15.5cm{% if locale.language == "mandarin_chinese" %}, above: 0cm, below: 0.12cm{% endif %})[
   #grid(
     columns: (1.8cm, 1fr),
     column-gutter: 0.3cm,
