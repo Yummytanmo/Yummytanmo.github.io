@@ -64,9 +64,9 @@ An autonomous social media agent system for exploring agent autonomy and influen
 
 <ul class="dated-list awards-list">
   <li><span class="entry-date">May 2026</span><div>Outstanding Graduate, Harbin Institute of Technology</div></li>
-  <li><span class="entry-date">Mar. 2026</span><div>Song Qingling Grant</div></li>
+  <li><span class="entry-date">Mar. 2026</span><div>Soong Ching Ling Future Scholarship</div></li>
   <li><span class="entry-date">May 2025</span><div>Second Prize, ASC Student Supercomputer Challenge</div></li>
   <li><span class="entry-date">Mar. 2025</span><div>Samsung Scholarship</div></li>
-  <li><span class="entry-date">Mar. 2025</span><div>Song Qingling Grant</div></li>
+  <li><span class="entry-date">Mar. 2025</span><div>Soong Ching Ling Future Scholarship</div></li>
   <li><span class="entry-date">Nov. 2023</span><div>First Prize, National College Student Mathematics Competition (Heilongjiang Division)</div></li>
 </ul>
